@@ -9,11 +9,9 @@ hostname(function (err, hname) {
         host = hname;
     console.log('Host name:', host);
 });
-// 以下2行はそのうち import * from "SongleWidgetIoMT"; と書けるようになる？
-global["XMLHttpRequest"] = require("w3c-xmlhttprequest").XMLHttpRequest;
-var SongleWidget = require("../api")["default"];
+var SongleWidget = require("songle-widget");
 // トークンの情報を取ってくる
-var settings = require("../settings");
+var settings = require("./settings");
 // Songle Widget IoMT APIのエンドポイント指定
 SongleWidget.System.defaultEndpointWebClientProtocol = "https:";
 SongleWidget.System.defaultEndpointWebClientHost = "api.songle.jp";
