@@ -1,0 +1,17 @@
+{
+  "name": "songle-sync-client-rapiro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "@types/node": "^6.0.78",
+    "os-hostname": "^1.1.3",
+    "serialport": "^4.0.7"
+  }
+}
