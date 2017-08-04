@@ -23,29 +23,6 @@ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt install nodejs
 ```
 
-## 静的IPを設定する方法
-
-`/etc/network/interfaces.d/eth0` を作成し、以下のような内容にします。
-
-```sh
-auto eth0
-allow-hotplug eth0
-iface eth0 inet static
-address 192.168.3.107
-netmask 255.255.0.0
-gateway 192.168.1.1
-dns-nameservers 8.8.8.8 8.8.4.4
-```
-
-これでだめな場合は `/etc/dhcpcd.conf` の末尾に以下の記述を足します。
-
-```sh
-interface eth0
-static ip_address=192.168.3.106/16
-static routers=192.168.1.1
-static domain_name_servers=8.8.8.8 8.8.4.4
-```
-
 ## 一般的な使い方説明
 
 以下のようにして実行してください。 `npm install` は最初の一度だけ必要です。
@@ -68,4 +45,27 @@ sudo npm install serialport --unsafe-perm --build-from-source
 
 ```sh
 node rapiro-test.js
+```
+
+## 静的IPを設定する方法
+
+`/etc/network/interfaces.d/eth0` を作成し、以下のような内容にします。
+
+```sh
+auto eth0
+allow-hotplug eth0
+iface eth0 inet static
+address 192.168.3.107
+netmask 255.255.0.0
+gateway 192.168.1.1
+dns-nameservers 8.8.8.8 8.8.4.4
+```
+
+これでだめな場合は `/etc/dhcpcd.conf` の末尾に以下の記述を足します。
+
+```sh
+interface eth0
+static ip_address=192.168.3.106/16
+static routers=192.168.1.1
+static domain_name_servers=8.8.8.8 8.8.4.4
 ```
