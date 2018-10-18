@@ -9,7 +9,7 @@ hostname(function (err, hname) {
         host = hname;
     console.log('Host name:', host);
 });
-var SongleWidget = require("songle-widget");
+var SongleWidget = require("songle-api");
 // トークンの情報を取ってくる
 var settings = require("./settings");
 // ビート情報と基本情報をもらってくる
